@@ -27,5 +27,18 @@
     "herbsInfo": "Contains information about herbs, formulas and ingredients",
     "rememberConversations": "Remember user conversations",
     "allowCorrections": "Allow users to provide subsequent corrections"
+  },
+  "settings": {
+    "title": "Character Settings",
+    "promptTitle": "Enter Character Prompt",
+    "promptPlaceholder": "Prompt...",
+    "themeToggle": "Dark Mode",
+    "languageToggle": "Chinese/English",
+    "conversationTitle": "Conversation Title",
+    "titlePlaceholder": "Enter conversation title...",
+    "saveTitle": "Save"
+  },
+  "chat": {
+    "startNewConversation": "Start a new conversation..."
   }
 } 

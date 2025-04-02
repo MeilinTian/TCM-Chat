@@ -4,6 +4,7 @@ import { SendOutlined, BulbOutlined, ThunderboltOutlined, SunOutlined, MoonOutli
 import { useTheme } from '../contexts/ThemeContext';
 import { useLanguage } from '../contexts/LanguageContext';
 import { useTranslation } from 'react-i18next';
+import CharacterSettings from '../components/CharacterSettings';
 import '../styles/Home.css';
 
 const { Title, Text } = Typography;
@@ -11,8 +12,13 @@ const { Title, Text } = Typography;
 const Home = () => {
   const [inputValue, setInputValue] = useState('');
   const { theme, toggleTheme } = useTheme();
-  const { language, toggleLanguage } = useLanguage();
+  const { toggleLanguage } = useLanguage();
   const { t } = useTranslation();
+  const [showSettings, setShowSettings] = useState(false);
+
+  const handleCloseSettings = () => {
+    setShowSettings(false);
+  };
 
   return (
     <div className="home-container">
@@ -24,6 +30,7 @@ const Home = () => {
           type="default" 
           className="new-chat-button" 
           icon={<span>+</span>}
+          onClick={() => setShowSettings(true)}
         >
           {t('sidebar.newChat')}
         </Button>
@@ -58,70 +65,105 @@ const Home = () => {
       </div>
       
       <div className="main-content">
-        <Title level={2} className="app-title">{t('common.appName')}</Title>
-        
-        <div className="features-container">
-          <div className="feature-section">
-            <div className="feature-header">
-              <BulbOutlined className="feature-icon" />
-              <Text className="feature-title">{t('home.tcmExamples')}</Text>
+        {!showSettings ? (
+          <>
+            <Title level={2} className="app-title">{t('common.appName')}</Title>
+            
+            <div className="features-container">
+              <div className="feature-section">
+                <div className="feature-header">
+                  <BulbOutlined className="feature-icon" />
+                  <Text className="feature-title">{t('home.tcmExamples')}</Text>
+                </div>
+                
+                <div className="feature-cards">
+                  <div className="feature-card">
+                    <Text>{t('examples.tcmKnowledge')} →</Text>
+                  </div>
+                  <div className="feature-card">
+                    <Text>{t('examples.smartRecommendation')} →</Text>
+                  </div>
+                  <div className="feature-card">
+                    <Text>{t('examples.medicalCase')} →</Text>
+                  </div>
+                  <div className="feature-card">
+                    <Text>{t('examples.entityExtraction')} →</Text>
+                  </div>
+                  <div className="feature-card">
+                    <Text>{t('examples.admetPrediction')} →</Text>
+                  </div>
+                </div>
+              </div>
+              
+              <div className="feature-section">
+                <div className="feature-header">
+                  <ThunderboltOutlined className="feature-icon" />
+                  <Text className="feature-title">{t('home.ability')}</Text>
+                </div>
+                
+                <div className="feature-cards">
+                  <div className="feature-card">
+                    <Text>{t('abilities.herbsInfo')}</Text>
+                  </div>
+                  <div className="feature-card">
+                    <Text>{t('abilities.rememberConversations')}</Text>
+                  </div>
+                  <div className="feature-card">
+                    <Text>{t('abilities.allowCorrections')}</Text>
+                  </div>
+                </div>
+              </div>
             </div>
             
-            <div className="feature-cards">
-              <div className="feature-card">
-                <Text>{t('examples.tcmKnowledge')} →</Text>
-              </div>
-              <div className="feature-card">
-                <Text>{t('examples.smartRecommendation')} →</Text>
-              </div>
-              <div className="feature-card">
-                <Text>{t('examples.medicalCase')} →</Text>
-              </div>
-              <div className="feature-card">
-                <Text>{t('examples.entityExtraction')} →</Text>
-              </div>
-              <div className="feature-card">
-                <Text>{t('examples.admetPrediction')} →</Text>
-              </div>
-            </div>
-          </div>
-          
-          <div className="feature-section">
-            <div className="feature-header">
-              <ThunderboltOutlined className="feature-icon" />
-              <Text className="feature-title">{t('home.ability')}</Text>
-            </div>
-            
-            <div className="feature-cards">
-              <div className="feature-card">
-                <Text>{t('abilities.herbsInfo')}</Text>
-              </div>
-              <div className="feature-card">
-                <Text>{t('abilities.rememberConversations')}</Text>
-              </div>
-              <div className="feature-card">
-                <Text>{t('abilities.allowCorrections')}</Text>
-              </div>
-            </div>
-          </div>
-        </div>
-        
-        <div className="input-container">
-          <Input
-            value={inputValue}
-            onChange={(e) => setInputValue(e.target.value)}
-            placeholder={t('home.inputMessage')}
-            className="chat-input"
-            suffix={
-              <Button 
-                type="text" 
-                icon={<SendOutlined />} 
-                className="send-button"
+            <div className="input-container">
+              <Input
+                value={inputValue}
+                onChange={(e) => setInputValue(e.target.value)}
+                placeholder={t('home.inputMessage')}
+                className="chat-input"
+                suffix={
+                  <Button 
+                    type="text" 
+                    icon={<SendOutlined />} 
+                    className="send-button"
+                  />
+                }
               />
-            }
-          />
-        </div>
+            </div>
+          </>
+        ) : (
+          <div className="chat-container">
+            <div className="chat-messages">
+              {/* 这里将来会显示聊天消息 */}
+              <div className="empty-chat-message">
+                <Text>{t('chat.startNewConversation')}</Text>
+              </div>
+            </div>
+            
+            <div className="input-container">
+              <Input
+                value={inputValue}
+                onChange={(e) => setInputValue(e.target.value)}
+                placeholder={t('home.inputMessage')}
+                className="chat-input"
+                suffix={
+                  <Button 
+                    type="text" 
+                    icon={<SendOutlined />} 
+                    className="send-button"
+                  />
+                }
+              />
+            </div>
+          </div>
+        )}
       </div>
+      
+      {showSettings && (
+        <div className="settings-panel">
+          <CharacterSettings onClose={handleCloseSettings} />
+        </div>
+      )}
     </div>
   );
 };

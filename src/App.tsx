@@ -4,6 +4,7 @@ import enUS from 'antd/locale/en_US';
 import Home from './pages/Home';
 import { ThemeProvider, useTheme } from './contexts/ThemeContext';
 import { LanguageProvider, useLanguage } from './contexts/LanguageContext';
+import './i18n';
 import './App.css';
 
 // 包装组件，使用主题和语言

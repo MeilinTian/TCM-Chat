@@ -27,5 +27,18 @@
     "herbsInfo": "收录关于药材、配方和成分信息",
     "rememberConversations": "记住用户之前在对话中所说的话",
     "allowCorrections": "允许用户提供反馈更正"
+  },
+  "settings": {
+    "title": "角色设置",
+    "promptTitle": "请输入角色 Prompt",
+    "promptPlaceholder": "提示词...",
+    "themeToggle": "深色模式",
+    "languageToggle": "中文/英文",
+    "conversationTitle": "对话标题",
+    "titlePlaceholder": "输入对话标题...",
+    "saveTitle": "保存"
+  },
+  "chat": {
+    "startNewConversation": "开始新的对话..."
   }
 } 

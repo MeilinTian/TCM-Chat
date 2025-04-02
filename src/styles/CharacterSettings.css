@@ -1,0 +1,88 @@
+.character-settings-container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: 16px;
+  background-color: var(--background-secondary, #f5f5f5);
+  border-left: 1px solid var(--border-color, #e8e8e8);
+}
+
+.settings-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.close-button {
+  font-size: 16px;
+  padding: 4px 8px;
+}
+
+.settings-content {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  flex: 1;
+}
+
+.section-title {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 500;
+  color: var(--text-primary, #333);
+}
+
+.prompt-section, 
+.conversation-title-section {
+  margin-bottom: 16px;
+}
+
+.prompt-input {
+  width: 100%;
+  border-radius: 8px;
+  background-color: var(--input-bg, #fff);
+  color: var(--text-primary, #333);
+}
+
+.setting-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.setting-label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.title-input-container {
+  display: flex;
+  gap: 8px;
+}
+
+.title-input {
+  flex: 1;
+  background-color: var(--input-bg, #fff);
+  color: var(--text-primary, #333);
+}
+
+/* 确保在深色模式下有正确的样式 */
+[data-theme='dark'] .character-settings-container {
+  background-color: var(--background-secondary, #2d2d2d);
+  border-left-color: var(--border-color, #444);
+}
+
+[data-theme='dark'] .section-title {
+  color: var(--text-primary, #ddd);
+}
+
+[data-theme='dark'] .prompt-input,
+[data-theme='dark'] .title-input {
+  background-color: var(--input-bg, #333);
+  color: var(--text-primary, #ddd);
+  border-color: var(--border-color, #444);
+} 
