@@ -1,0 +1,184 @@
+.home-container {
+  display: flex;
+  height: 100vh;
+  width: 100%;
+}
+
+.sidebar {
+  width: 250px;
+  background-color: var(--sidebar-bg);
+  display: flex;
+  flex-direction: column;
+  padding: 16px;
+  border-right: 1px solid #e8e8e8;
+}
+
+.logo-container {
+  margin-bottom: 20px;
+}
+
+.logo-placeholder {
+  width: 100%;
+  height: 50px;
+  background-color: #aaa;
+  border-radius: 4px;
+}
+
+.new-chat-button {
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent !important;
+  border-color: #9baab0 !important;
+  color: var(--sidebar-text) !important;
+}
+
+[data-theme='dark'] .new-chat-button {
+  border-color: #555 !important;
+}
+
+.new-chat-button:hover {
+  background-color: #bccdd6 !important;
+}
+
+.sidebar-bottom {
+  margin-top: auto;
+}
+
+.sidebar-item {
+  padding: 10px 0;
+  cursor: pointer;
+  color: var(--sidebar-text);
+}
+
+.main-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  overflow-y: auto;
+  background-color: var(--main-content-bg);
+}
+
+.app-title {
+  text-align: center;
+  margin-bottom: 30px !important;
+  color: var(--app-title-color) !important;
+}
+
+.features-container {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 40px;
+  padding: 0 10%;
+}
+
+.feature-section {
+  width: 48%;
+}
+
+.feature-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.feature-icon {
+  font-size: 24px;
+  margin-right: 10px;
+  color: var(--icon-color);
+}
+
+.feature-title {
+  font-size: 18px;
+  font-weight: 500;
+  color: var(--title-color);
+}
+
+.feature-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.feature-card {
+  background-color: var(--feature-card-bg);
+  padding: 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.feature-card:hover {
+  background-color: var(--feature-card-hover-bg);
+}
+
+.feature-card span {
+  color: var(--text-color);
+}
+
+.input-container {
+  margin-top: auto;
+  padding: 20px 10%;
+}
+
+.chat-input {
+  border-radius: 20px;
+  padding: 10px 15px;
+}
+
+.send-button {
+  color: #1890ff;
+}
+
+:root {
+  --sidebar-bg: #c2d5dc;
+  --main-content-bg: #fff;
+  --sidebar-text: #333;
+  --feature-card-bg: #f5f5f5;
+  --feature-card-hover-bg: #e8e8e8;
+  --button-hover-bg: #bccdd6;
+  --icon-color: #333;
+  --title-color: #333;
+  --text-color: #333;
+  --app-title-color: #333;
+}
+
+[data-theme='dark'] {
+  --sidebar-bg: #202123;
+  --main-content-bg: #343540;
+  --sidebar-text: #ddd;
+  --feature-card-bg: #444654;
+  --feature-card-hover-bg: #555;
+  --button-hover-bg: rgba(255, 255, 255, 0.1);
+  --icon-color: #ddd;
+  --title-color: #ddd;
+  --text-color: #ddd;
+  --app-title-color: #ddd;
+}
+
+.ant-btn-default {
+  background-color: transparent !important;
+  border-color: #9baab0 !important;
+  color: var(--sidebar-text) !important;
+}
+
+.ant-btn-default:hover {
+  background-color: #bccdd6 !important;
+  border-color: #9baab0 !important;
+}
+
+[data-theme='dark'] .ant-btn-default {
+  border-color: #555 !important;
+}
+
+[data-theme='dark'] .ant-btn-default:hover {
+  background-color: rgba(255, 255, 255, 0.1) !important;
+  border-color: #555 !important;
+}
+
+[data-theme='dark'] .new-chat-button:hover {
+  background-color: rgba(255, 255, 255, 0.1) !important;
+} 

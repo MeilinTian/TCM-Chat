@@ -1,0 +1,31 @@
+{
+  "common": {
+    "appName": "TCMChat"
+  },
+  "sidebar": {
+    "newChat": "New session",
+    "language": "中文",
+    "darkMode": "Dark Mode",
+    "lightMode": "Light Mode",
+    "aboutUs": "About Us",
+    "updateFAQ": "Update & FAQ",
+    "statistics": "Statistics"
+  },
+  "home": {
+    "tcmExamples": "Examples of TCM",
+    "ability": "Ability",
+    "inputMessage": "Enter message..."
+  },
+  "examples": {
+    "tcmKnowledge": "TCM knowledge base example",
+    "smartRecommendation": "Smart recommendation example",
+    "medicalCase": "Medical case diagnosis example",
+    "entityExtraction": "Entity extraction example",
+    "admetPrediction": "ADMET prediction example"
+  },
+  "abilities": {
+    "herbsInfo": "Contains information about herbs, formulas and ingredients",
+    "rememberConversations": "Remember user conversations",
+    "allowCorrections": "Allow users to provide subsequent corrections"
+  }
+} 

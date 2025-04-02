@@ -1,35 +1,54 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { ConfigProvider, theme as antdTheme } from 'antd';
+import zhCN from 'antd/locale/zh_CN';
+import enUS from 'antd/locale/en_US';
+import Home from './pages/Home';
+import { ThemeProvider, useTheme } from './contexts/ThemeContext';
+import { LanguageProvider, useLanguage } from './contexts/LanguageContext';
+import './App.css';
+
+// 包装组件，使用主题和语言
+const AppContent = () => {
+  const { theme } = useTheme();
+  const { language } = useLanguage();
+  
+  return (
+    <ConfigProvider 
+      locale={language === 'zh' ? zhCN : enUS}
+      theme={{
+        algorithm: theme === 'dark' 
+          ? antdTheme.darkAlgorithm 
+          : antdTheme.defaultAlgorithm,
+        token: {
+          // 自定义主题令牌
+          colorPrimary: '#1677ff',
+          colorText: theme === 'dark' ? '#ddd' : '#333',
+          colorTextSecondary: theme === 'dark' ? '#aaa' : '#666',
+          colorBgContainer: theme === 'dark' ? '#343540' : '#fff',
+        },
+        components: {
+          Button: {
+            defaultBg: 'transparent',
+            defaultBorderColor: theme === 'light' ? '#9baab0' : '#555',
+            defaultHoverBg: theme === 'light' ? '#bccdd6' : 'rgba(255, 255, 255, 0.1)',
+            defaultActiveBg: theme === 'light' ? '#a8bbc5' : 'rgba(255, 255, 255, 0.2)',
+            defaultColor: theme === 'dark' ? '#ddd' : '#333',
+          },
+        },
+      }}
+    >
+      <Home />
+    </ConfigProvider>
+  );
+};
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    <LanguageProvider>
+      <ThemeProvider>
+        <AppContent />
+      </ThemeProvider>
+    </LanguageProvider>
+  );
 }
 
-export default App
+export default App;
