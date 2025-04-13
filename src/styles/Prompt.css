@@ -1,0 +1,38 @@
+.prompt-container {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.prompt-container.light-mode {
+  background-color: #fff;
+  color: #333;
+}
+
+.prompt-container.dark-mode {
+  background-color: #343540;
+  color: #ddd;
+}
+
+.prompt-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.prompt-header h1 {
+  margin: 0 0 0 10px;
+}
+
+.back-button {
+  font-size: 18px;
+}
+
+.prompt-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+} 

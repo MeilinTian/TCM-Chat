@@ -1,11 +1,12 @@
 import { useState } from 'react';
 import { Button, Input, Typography } from 'antd';
-import { SendOutlined, BulbOutlined, ThunderboltOutlined, SunOutlined, MoonOutlined, GlobalOutlined } from '@ant-design/icons';
+import { SendOutlined, BulbOutlined, ThunderboltOutlined, SunOutlined, MoonOutlined, GlobalOutlined, SettingOutlined } from '@ant-design/icons';
 import { useTheme } from '../contexts/ThemeContext';
 import { useLanguage } from '../contexts/LanguageContext';
 import { useTranslation } from 'react-i18next';
 import CharacterSettings from '../components/CharacterSettings';
 import '../styles/Home.css';
+import { useNavigate } from 'react-router-dom';
 
 const { Title, Text } = Typography;
 
@@ -15,6 +16,7 @@ const Home = () => {
   const { toggleLanguage } = useLanguage();
   const { t } = useTranslation();
   const [showSettings, setShowSettings] = useState(false);
+  const navigate = useNavigate();
 
   const handleCloseSettings = () => {
     setShowSettings(false);
@@ -22,6 +24,10 @@ const Home = () => {
 
   const handleFeatureCardClick = (cardType: string) => {
     setInputValue(t(`inputExamples.${cardType}`));
+  };
+
+  const handlePromptSettings = () => {
+    navigate('/prompt');
   };
 
   return (
@@ -55,6 +61,10 @@ const Home = () => {
                 <span>{t('sidebar.lightMode')}</span>
               </>
             )}
+          </div>
+          <div className="sidebar-item" onClick={handlePromptSettings}>
+            <SettingOutlined style={{ marginRight: '8px' }} />
+            <span>{t('sidebar.promptSettings')}</span>
           </div>
         </div>
       </div>
