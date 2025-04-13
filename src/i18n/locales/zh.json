@@ -50,6 +50,16 @@
     "admetPrediction": "C=C(C)C(O)Cc1c(OC)ccc2ccc(=O)oc12  该分子的详细信息?"
   },
   "prompt": {
-    "title": "prompt调节"
+    "title": "prompt调节",
+    "instructions": "输入您的自定义提示指令：",
+    "placeholder": "在此输入您的提示词...",
+    "examplesTitle": "示例",
+    "preview": "预览",
+    "send": "发送",
+    "confirm": "确认",
+    "cancel": "取消",
+    "confirmTitle": "确认提示词",
+    "confirmMessage": "您确定要使用这个提示词吗？",
+    "ok": "确定"
   }
 } 

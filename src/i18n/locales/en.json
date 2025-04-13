@@ -50,6 +50,16 @@
     "admetPrediction": "What is the detailed information of the molecule C=C(C)C(O)Cc1c(OC)ccc2ccc(=O)oc12?"
   },
   "prompt": {
-    "title": "Prompt Settings"
+    "title": "Prompt Settings",
+    "instructions": "Enter your custom prompt instructions:",
+    "placeholder": "Enter your prompt here...",
+    "examplesTitle": "Examples",
+    "preview": "Preview",
+    "send": "Send",
+    "confirm": "Confirm",
+    "cancel": "Cancel",
+    "confirmTitle": "Confirm Prompt",
+    "confirmMessage": "Are you sure you want to use this prompt?",
+    "ok": "OK"
   }
 } 
