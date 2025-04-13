@@ -212,4 +212,11 @@
   align-items: center;
   height: 100%;
   color: var(--text-secondary);
+}
+
+/* 隐藏侧边栏中的特定项目 */
+.sidebar-item.about-us,
+.sidebar-item.update-faq,
+.sidebar-item.statistics {
+  display: none;
 } 

@@ -52,15 +52,6 @@ const Home = () => {
               </>
             )}
           </div>
-          <div className="sidebar-item">
-            <span>{t('sidebar.aboutUs')}</span>
-          </div>
-          <div className="sidebar-item">
-            <span>{t('sidebar.updateFAQ')}</span>
-          </div>
-          <div className="sidebar-item">
-            <span>{t('sidebar.statistics')}</span>
-          </div>
         </div>
       </div>
       
