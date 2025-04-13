@@ -60,6 +60,7 @@
     "cancel": "取消",
     "confirmTitle": "确认提示词",
     "confirmMessage": "您确定要使用这个提示词吗？",
-    "ok": "确定"
+    "ok": "确定",
+    "result": "生成结果"
   }
 } 
