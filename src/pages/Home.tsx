@@ -20,6 +20,10 @@ const Home = () => {
     setShowSettings(false);
   };
 
+  const handleFeatureCardClick = (cardType: string) => {
+    setInputValue(t(`inputExamples.${cardType}`));
+  };
+
   return (
     <div className="home-container">
       <div className="sidebar">
@@ -68,19 +72,19 @@ const Home = () => {
                 </div>
                 
                 <div className="feature-cards">
-                  <div className="feature-card">
+                  <div className="feature-card" onClick={() => handleFeatureCardClick('tcmKnowledge')}>
                     <Text>{t('examples.tcmKnowledge')} →</Text>
                   </div>
-                  <div className="feature-card">
+                  <div className="feature-card" onClick={() => handleFeatureCardClick('smartRecommendation')}>
                     <Text>{t('examples.smartRecommendation')} →</Text>
                   </div>
-                  <div className="feature-card">
+                  <div className="feature-card" onClick={() => handleFeatureCardClick('medicalCase')}>
                     <Text>{t('examples.medicalCase')} →</Text>
                   </div>
-                  <div className="feature-card">
+                  <div className="feature-card" onClick={() => handleFeatureCardClick('entityExtraction')}>
                     <Text>{t('examples.entityExtraction')} →</Text>
                   </div>
-                  <div className="feature-card">
+                  <div className="feature-card" onClick={() => handleFeatureCardClick('admetPrediction')}>
                     <Text>{t('examples.admetPrediction')} →</Text>
                   </div>
                 </div>
