@@ -39,13 +39,59 @@
 }
 
 .back-button {
-  font-size: 18px;
-  border-radius: 50%;
-  width: 40px;
-  height: 40px;
+  font-size: 16px;
+  border-radius: 8px;
+  width: 36px;
+  height: 36px;
   display: flex;
   justify-content: center;
   align-items: center;
+  border: none !important;
+  transition: all 0.3s ease;
+  background-color: transparent;
+  padding: 8px;
+  margin: 0;
+  outline: none;
+}
+
+.light-mode .back-button {
+  color: #333;
+}
+
+.dark-mode .back-button {
+  color: #ddd;
+}
+
+.back-button:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+  transform: scale(1.05);
+  border: none !important;
+  box-shadow: none !important;
+}
+
+.dark-mode .back-button:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.back-button:active,
+.back-button:focus {
+  background-color: rgba(0, 0, 0, 0.08);
+  transform: scale(0.98);
+  border: none !important;
+  box-shadow: none !important;
+  outline: none !important;
+}
+
+.dark-mode .back-button:active,
+.dark-mode .back-button:focus {
+  background-color: rgba(255, 255, 255, 0.15);
+}
+
+.back-button .anticon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 16px;
 }
 
 .prompt-content-wrapper {

@@ -50,7 +50,7 @@
     "admetPrediction": "What is the detailed information of the molecule C=C(C)C(O)Cc1c(OC)ccc2ccc(=O)oc12?"
   },
   "prompt": {
-    "title": "Prompt Settings",
+    "title": "TCM Clinical Trial Design",
     "instructions": "Enter your custom prompt instructions:",
     "placeholder": "Enter your prompt here...",
     "examplesTitle": "Examples",
