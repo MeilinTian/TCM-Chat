@@ -135,6 +135,56 @@
   color: #1890ff;
 }
 
+.textarea-with-button {
+  display: flex;
+  align-items: flex-end;
+  position: relative;
+}
+
+.textarea-with-button .chat-input {
+  flex: 1;
+  resize: none;
+}
+
+.textarea-with-button .send-button {
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+  padding: 0;
+  background: transparent;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* 添加TextArea带图标的样式 */
+.textarea-with-icon {
+  position: relative;
+  width: 100%;
+}
+
+.textarea-with-icon .chat-input {
+  width: 100%;
+  padding-right: 40px; /* 为发送图标预留空间 */
+  resize: none;
+}
+
+.textarea-with-icon .send-icon {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #1677ff;
+  font-size: 16px;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.textarea-with-icon .send-icon:hover {
+  color: #4096ff;
+}
+
 :root {
   --sidebar-bg: #c2d5dc;
   --main-content-bg: #fff;
@@ -212,6 +262,67 @@
   align-items: center;
   height: 100%;
   color: var(--text-secondary);
+}
+
+/* 消息样式 */
+.message-container {
+  display: flex;
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+.user-message {
+  flex-direction: row-reverse;
+}
+
+.bot-message {
+  flex-direction: row;
+}
+
+.message-avatar {
+  margin: 0 12px;
+  flex-shrink: 0;
+}
+
+.message-content {
+  max-width: 70%;
+  display: flex;
+  flex-direction: column;
+}
+
+.user-message .message-content {
+  align-items: flex-end;
+}
+
+.bot-message .message-content {
+  align-items: flex-start;
+}
+
+.message-bubble {
+  padding: 12px 16px;
+  border-radius: 12px;
+  position: relative;
+  word-wrap: break-word;
+  white-space: pre-wrap;
+  line-height: 1.5;
+}
+
+.user-message .message-bubble {
+  background-color: #1677ff;
+  color: white;
+  border-top-right-radius: 4px;
+}
+
+.bot-message .message-bubble {
+  background-color: var(--feature-card-bg);
+  color: var(--text-color);
+  border-top-left-radius: 4px;
+}
+
+.message-time {
+  font-size: 12px;
+  color: var(--text-secondary, #888);
+  margin-top: 4px;
 }
 
 /* 隐藏侧边栏中的特定项目 */
