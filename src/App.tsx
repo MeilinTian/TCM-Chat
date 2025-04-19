@@ -24,6 +24,11 @@ const AppContent = () => {
         token: {
           // 自定义主题令牌
           colorPrimary: '#1677ff',
+          colorLink: '#1677ff',
+          colorInfo: '#1677ff',
+          colorSuccess: '#52c41a',
+          colorWarning: '#1677ff',  // 将警告色也改为蓝色系
+          colorError: '#ff4d4f',
           colorText: theme === 'dark' ? '#ddd' : '#333',
           colorTextSecondary: theme === 'dark' ? '#aaa' : '#666',
           colorBgContainer: theme === 'dark' ? '#343540' : '#fff',
@@ -32,10 +37,30 @@ const AppContent = () => {
           Button: {
             defaultBg: 'transparent',
             defaultBorderColor: theme === 'light' ? '#9baab0' : '#555',
-            defaultHoverBg: theme === 'light' ? '#bccdd6' : 'rgba(255, 255, 255, 0.1)',
-            defaultActiveBg: theme === 'light' ? '#a8bbc5' : 'rgba(255, 255, 255, 0.2)',
+            defaultHoverBg: theme === 'light' ? '#e6f4ff' : 'rgba(22, 119, 255, 0.1)',
+            defaultActiveBg: theme === 'light' ? '#bae0ff' : 'rgba(22, 119, 255, 0.2)',
             defaultColor: theme === 'dark' ? '#ddd' : '#333',
+            colorPrimary: '#1677ff',
+            colorPrimaryHover: '#4096ff',
+            colorPrimaryActive: '#0958d9',
           },
+          Input: {
+            activeBorderColor: '#1677ff',
+            hoverBorderColor: '#4096ff',
+            addonBg: '#e6f4ff',
+          },
+          Select: {
+            optionSelectedBg: '#e6f4ff',
+            optionActiveBg: '#e6f4ff',
+          },
+          Checkbox: {
+            colorPrimary: '#1677ff',
+          },
+          Modal: {
+            titleColor: theme === 'dark' ? '#ddd' : '#333',
+            contentBg: theme === 'dark' ? '#343540' : '#fff',
+            headerBg: theme === 'dark' ? '#343540' : '#fff',
+          }
         },
       }}
     >

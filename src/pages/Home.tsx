@@ -1,5 +1,5 @@
 import { useState, useRef, useEffect } from 'react';
-import { Button, Input, Typography, Avatar } from 'antd';
+import { Button, Input, Typography, Avatar, Modal } from 'antd';
 import { SendOutlined, BulbOutlined, ThunderboltOutlined, SunOutlined, MoonOutlined, GlobalOutlined, SettingOutlined, UserOutlined, RobotOutlined } from '@ant-design/icons';
 import { useTheme } from '../contexts/ThemeContext';
 import { useLanguage } from '../contexts/LanguageContext';
@@ -97,22 +97,46 @@ const Home = () => {
     }
   };
 
+  const handleNewChat = () => {
+    // 如果输入框有内容，弹出确认对话框
+    if (inputValue.trim()) {
+      Modal.confirm({
+        title: t('common.confirmTitle') || '确认操作',
+        content: t('common.confirmNewChat') || '确定要开始新对话吗？当前输入内容将会丢失。',
+        okText: t('common.confirm') || '确认',
+        cancelText: t('common.cancel') || '取消',
+        onOk: () => {
+          resetToHome();
+        }
+      });
+    } else {
+      resetToHome();
+    }
+  };
+  
+  const resetToHome = () => {
+    // 重置所有状态回到主页
+    setMessages([]);
+    setIsChatMode(false);
+    setInputValue('');
+    setShowSettings(false);
+  };
+
   return (
     <div className="home-container">
       <div className="sidebar">
         <div className="logo-container">
-          <div className="logo-placeholder"></div>
+          <div className="logo-placeholder">
+            <span className="tcm-logo-text">
+              <span style={{ color: '#1677ff' }}>TCM</span> Chat
+            </span>
+          </div>
         </div>
         <Button 
           type="default" 
           className="new-chat-button" 
           icon={<span>+</span>}
-          onClick={() => {
-            setMessages([]);
-            setIsChatMode(false);
-            setInputValue('');
-            setShowSettings(false);
-          }}
+          onClick={handleNewChat}
         >
           {t('sidebar.newChat')}
         </Button>

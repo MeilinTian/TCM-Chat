@@ -12,18 +12,38 @@
   display: flex;
   flex-direction: column;
   padding: 16px;
-  border-right: 1px solid #e8e8e8;
+  border-right: 1px solid var(--border-color);
 }
 
 .logo-container {
   margin-bottom: 20px;
+  padding: 10px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .logo-placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   width: 100%;
-  height: 50px;
-  background-color: #aaa;
+  height: auto;
+  padding: 5px 0;
+  background-color: transparent;
   border-radius: 4px;
+}
+
+.tcm-logo-text {
+  font-size: 18px;
+  font-weight: bold;
+  color: var(--sidebar-text);
+  margin-right: 10px;
+}
+
+.school-logo {
+  height: 28px;
+  width: auto;
 }
 
 .new-chat-button {
@@ -41,7 +61,23 @@
 }
 
 .new-chat-button:hover {
-  background-color: #bccdd6 !important;
+  background-color: #e6f4ff !important;
+  border-color: #1677ff !important;
+  color: #1677ff !important;
+}
+
+.new-chat-button:focus,
+.new-chat-button:focus-visible {
+  outline: none !important;
+  border-color: #1677ff !important;
+  box-shadow: 0 0 0 2px rgba(22, 119, 255, 0.2) !important;
+}
+
+[data-theme='dark'] .new-chat-button:focus,
+[data-theme='dark'] .new-chat-button:focus-visible {
+  outline: none !important;
+  border-color: #1677ff !important;
+  box-shadow: 0 0 0 2px rgba(22, 119, 255, 0.2) !important;
 }
 
 .sidebar-bottom {
@@ -52,6 +88,19 @@
   padding: 10px 0;
   cursor: pointer;
   color: var(--sidebar-text);
+  transition: all 0.3s;
+}
+
+.sidebar-item:hover {
+  color: #1677ff;
+}
+
+.sidebar-item .anticon {
+  transition: all 0.3s;
+}
+
+.sidebar-item:hover .anticon {
+  color: #1677ff;
 }
 
 .main-content {
@@ -110,11 +159,15 @@
   padding: 16px;
   border-radius: 8px;
   cursor: pointer;
-  transition: background-color 0.3s;
+  transition: all 0.3s;
+  border: 1px solid transparent;
 }
 
 .feature-card:hover {
   background-color: var(--feature-card-hover-bg);
+  border-color: #1677ff;
+  box-shadow: 0 2px 8px rgba(22, 119, 255, 0.1);
+  transform: translateY(-2px);
 }
 
 .feature-card span {
@@ -168,6 +221,14 @@
   width: 100%;
   padding-right: 40px; /* 为发送图标预留空间 */
   resize: none;
+  transition: all 0.3s;
+  border-color: #d9d9d9;
+}
+
+.textarea-with-icon .chat-input:hover,
+.textarea-with-icon .chat-input:focus {
+  border-color: #1677ff;
+  box-shadow: 0 0 0 2px rgba(22, 119, 255, 0.1);
 }
 
 .textarea-with-icon .send-icon {
@@ -179,23 +240,27 @@
   font-size: 16px;
   cursor: pointer;
   z-index: 10;
+  transition: all 0.3s;
 }
 
 .textarea-with-icon .send-icon:hover {
   color: #4096ff;
+  transform: translateY(-50%) scale(1.1);
 }
 
 :root {
-  --sidebar-bg: #c2d5dc;
+  --sidebar-bg: #e6f4ff;
   --main-content-bg: #fff;
   --sidebar-text: #333;
   --feature-card-bg: #f5f5f5;
-  --feature-card-hover-bg: #e8e8e8;
-  --button-hover-bg: #bccdd6;
-  --icon-color: #333;
+  --feature-card-hover-bg: #e6f4ff;
+  --button-hover-bg: #e6f4ff;
+  --icon-color: #1677ff;
   --title-color: #333;
   --text-color: #333;
-  --app-title-color: #333;
+  --app-title-color: #1677ff;
+  --text-secondary: #666;
+  --border-color: #e8e8e8;
 }
 
 [data-theme='dark'] {
@@ -203,12 +268,14 @@
   --main-content-bg: #343540;
   --sidebar-text: #ddd;
   --feature-card-bg: #444654;
-  --feature-card-hover-bg: #555;
-  --button-hover-bg: rgba(255, 255, 255, 0.1);
-  --icon-color: #ddd;
+  --feature-card-hover-bg: rgba(22, 119, 255, 0.1);
+  --button-hover-bg: rgba(22, 119, 255, 0.1);
+  --icon-color: #1677ff;
   --title-color: #ddd;
   --text-color: #ddd;
-  --app-title-color: #ddd;
+  --app-title-color: #1677ff;
+  --text-secondary: #aaa;
+  --border-color: #444;
 }
 
 .ant-btn-default {
@@ -218,8 +285,9 @@
 }
 
 .ant-btn-default:hover {
-  background-color: #bccdd6 !important;
-  border-color: #9baab0 !important;
+  background-color: #e6f4ff !important;
+  border-color: #1677ff !important;
+  color: #1677ff !important;
 }
 
 [data-theme='dark'] .ant-btn-default {
@@ -227,12 +295,14 @@
 }
 
 [data-theme='dark'] .ant-btn-default:hover {
-  background-color: rgba(255, 255, 255, 0.1) !important;
-  border-color: #555 !important;
+  background-color: rgba(22, 119, 255, 0.1) !important;
+  border-color: #1677ff !important;
+  color: #1677ff !important;
 }
 
 [data-theme='dark'] .new-chat-button:hover {
-  background-color: rgba(255, 255, 255, 0.1) !important;
+  background-color: rgba(22, 119, 255, 0.1) !important;
+  border-color: #1677ff !important;
 }
 
 .settings-panel {
@@ -311,12 +381,15 @@
   background-color: #1677ff;
   color: white;
   border-top-right-radius: 4px;
+  box-shadow: 0 2px 8px rgba(22, 119, 255, 0.1);
 }
 
 .bot-message .message-bubble {
   background-color: var(--feature-card-bg);
   color: var(--text-color);
   border-top-left-radius: 4px;
+  border: 1px solid #e8e8e8;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
 }
 
 .message-time {
@@ -330,4 +403,38 @@
 .sidebar-item.update-faq,
 .sidebar-item.statistics {
   display: none;
+}
+
+[data-theme='dark'] .bot-message .message-bubble {
+  border-color: #444;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.ant-btn:focus,
+.ant-btn:focus-visible {
+  outline: none !important;
+  border-color: #1677ff !important;
+  box-shadow: 0 0 0 2px rgba(22, 119, 255, 0.2) !important;
+}
+
+/* 全局覆盖所有按钮的焦点样式 */
+button:focus,
+button:focus-visible {
+  outline: none !important;
+  border-color: #1677ff !important;
+  box-shadow: 0 0 0 2px rgba(22, 119, 255, 0.2) !important;
+}
+
+/* 暗色模式下的文本选中样式 */
+[data-theme='dark'] ::selection {
+  background-color: rgba(22, 119, 255, 0.3); /* 暗色模式下稍微深一点的蓝色 */
+  color: #fff; /* 确保文本在暗色模式下可见 */
+}
+
+[data-theme='dark'] .tcm-logo-text {
+  color: #e6f4ff;
+}
+
+[data-theme='dark'] .school-logo svg path {
+  fill: #1677ff;
 } 
